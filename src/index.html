@@ -1,15 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora de Freela - He4rtDevs</title>
-    <link rel="stylesheet" href="./main.css" />
-  </head>
-  <body>
-    <div>
-      <h1>Olá mundo.</h1>
-    </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|Oxygen:300,400,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./main.css">
     <script src="./main.js"></script>
-  </body>
+
+</head>
+
+<body class="">
+    <header class="text-center">
+        <img src="logo-he4rt2.png" class="headerimg" alt="" srcset="">
+        <h1 class="header1">Calculadora do Freela</h1>
+        <span class="subtitle">Descubra o valor da sua hora como um freelancer!</span>
+    </header>
+    <section>
+        <div class="flexdad">
+
+            <div class="cartao">
+                <p class="header2">1. Tempo diário investido</p>
+                <p>
+                    <input placeholder="ex (em horas): 4,5" class="form-control" type="text" name="horas" id="horas" onkeypress="validate(event, true, ',')">
+                </p>
+                <p>
+                    Quando tratamos de freelances, há uma certa demanda do seu tempo em off.
+                    Ou seja: depois do trabalho, escola ou aquele tempinho vago no final do
+                    dia que você usa pra relaxar e descontrair. Esse tempo é algo muito valioso
+                    para qualquer pessoa, certo? Então claramente temos que levar esse fator em consideração
+                </p>
+            </div>
+            <div class="cartao">
+                <p class="header2">2. Dias efetivos trabalhando</p>
+                <p>
+                    <input placeholder="ex (em dias): 20" class="form-control" type="text" name="dias" id="dias" onkeypress="validate(event)">
+                </p>
+                <p>
+                    Não há nenhuma garantia que você poderá trabalhar todos os dias e de
+                    fato lidar com o processo de confirmar tudo com o cliente. Logo, você terá que cotar
+                    uma quantidade de dias específicos para lidar com todo o processo, sendo ele a
+                    parte comercial e desenvolvimento.
+                </p>
+            </div>
+            <div class="cartao">
+                <p class="header2">3. Dias de Férias por projeto</p>
+                <p>
+                    <input placeholder="ex (em dias): 7" class="form-control" type="text" name="ferias" id="ferias" onkeypress="validate(event)">
+                </p>
+                <p>
+                    Qualquer modalidade de trabalho, seja CLT ou PJ, possui seus "encargos" referentes à
+                    verba de férias e não seria diferente considerando um freela. Uma parte do
+                    valor da sua hora reflete diretamente na quantidade de dias que você deseja tirar
+                    "férias" com o valor total projeto.
+                </p>
+            </div>
+            <div class="cartao">
+                <p class="header2">4. Valor total do Projeto</p>
+                <p>
+                    <input placeholder="ex (em moeda): 2700,00" class="form-control" type="text" name="valor" id="valor" onkeypress="validate(event, true, ',')">
+                </p>
+                <p>
+                    O fator principal que é o total a ser recebido pelo freela.
+                    A partir desse valor, do quanto você desejaria ganhar em cima do trabalho,
+                    é feito o cálculo maior.
+                </p>
+            </div>
+        </div>
+        
+        <div class="flexdadColumn addMarginTop30">
+            <button onclick="calculate()" class='btn button'>Calcular valor hora agora!</button>
+            <div class="hide" id="result"></div>
+        </div>
+    </section>
+
+    <footer class="flexdadColumn">
+        <div class="text-center"><img src="he4rt-footer.png" class="footerimg" alt="" srcset=""></div>
+        <div>Rui Leite - He4rt Developers</div>
+    </footer>
+</body>
+
 </html>
